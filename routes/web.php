@@ -19,6 +19,6 @@ Auth::routes(['verify' => true]);
 
 Route::resource('users', 'UsersController', ['show', 'update', 'edit']);
 
-
-
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
