@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '编辑' . $user->name . '个人资料')
+
 @section('content')
 <div class="container">
   <div class="col-md-8 offset-md-2">
