@@ -44,7 +44,7 @@ php artisan key:generate
 ```
 数据库迁移
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 ## 邮件设置
 ```
