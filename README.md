@@ -57,10 +57,27 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=918xxxx78@qq.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
+以上的配置如果无法使用，可能是你的云服务端口号封禁的问题，可以试用以下方案，改变端口号`MAIL_PORT` 和 `MAIL_ENCRYPTION`:
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.qq.com
+MAIL_PORT=465
+MAIL_USERNAME=918xxxx78@qq.com
+MAIL_PASSWORD=xxxxxxxxxx
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=918xxxx78@qq.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
 ## 设置百度翻译API
 ```
 BAIDU_TRANSLATE_APPID=201805280xxxxxx
 BAIDU_TRANSLATE_KEY=xxxxxxxxxxxxxxxx
+```
+
+## 使用队列
+```
+QUEUE_CONNECTION=redis
+REDIS_CLIENT=predis
 ```
 
 
