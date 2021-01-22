@@ -15,7 +15,7 @@ cp .env.example .env
 ```
 编辑 `env`:
 ```
-APP_NAME=LaraBBS # 设置站点名称
+APP_NAME=Lemoner # 设置站点名称,设置成你自己的
 APP_ENV=production #设置为生产环境
 APP_DEBUG=false # 关闭 Debug
 APP_URL=https://blog.lemonhuang.cn # 设置站点url
@@ -80,4 +80,10 @@ QUEUE_CONNECTION=redis
 REDIS_CLIENT=predis
 ```
 
+## 安装进程管理工具 Supervisor
+安装 Supervisor：
+```
+yum install supervisor
+```
+每一次部署代码时，需 `artisan horizon:terminate` 然后再 `artisan horizon` 重新加载代码
 
