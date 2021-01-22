@@ -1,4 +1,5 @@
 # 介绍
+此项目是跟着 [Learnku](https://learnku.com/) 的教程[《L02 Laravel 教程 - Web 开发实战进阶》](https://learnku.com/courses/laravel-intermediate-training/8.x)完成的BBS，功能简约，甚是喜爱。
 
 # 功能列表
 
@@ -46,7 +47,7 @@ php artisan key:generate
 ```
 php artisan migrate --seed
 ```
-## 邮件设置
+## 3.邮件设置
 ```
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.qq.com
@@ -68,19 +69,19 @@ MAIL_ENCRYPTION=ssl
 MAIL_FROM_ADDRESS=918xxxx78@qq.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
-## 设置百度翻译API
+## 4.设置百度翻译API
 ```
 BAIDU_TRANSLATE_APPID=201805280xxxxxx
 BAIDU_TRANSLATE_KEY=xxxxxxxxxxxxxxxx
 ```
 
-## 使用队列
+## 5.使用队列
 ```
 QUEUE_CONNECTION=redis
 REDIS_CLIENT=predis
 ```
 
-## 安装进程管理工具 Supervisor
+## 6.安装进程管理工具 Supervisor
 安装 Supervisor：
 ```
 yum install supervisor
