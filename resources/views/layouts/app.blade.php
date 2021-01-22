@@ -11,6 +11,7 @@
   <title>@yield('title', 'Lemoner') - {{ setting('site_name', 'Lemoner 论坛') }}</title>
   <meta name="description" content="@yield('description', setting('seo_description', 'Lemoner 论坛'))" />
   <meta name="keywords" content="@yield('keyword', setting('seo_keyword', 'Lemoner,技术,论坛,工作站'))">
+  <link rel="shortcut icon" href="/favicon.ico">
 
   <!-- Style -->
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
