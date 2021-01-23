@@ -23,6 +23,9 @@ Route::prefix('v1')
         // 短信验证码 验证接口
         Route::post('verificationCodes', 'VerificationCodesController@store')->name('verificationCodes.store');
 
+        // 图片验证码
+        Route::post('captchas', 'CaptchasController@store')->name('captchas.store');
+
         // 用户注册
         Route::post('users', 'UsersController@store')->name('users.store');
     });
