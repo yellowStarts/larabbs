@@ -88,3 +88,12 @@ yum install supervisor
 ```
 每一次部署代码时，需 `artisan horizon:terminate` 然后再 `artisan horizon` 重新加载代码
 
+## 7.计划任务
+使用调度器时，我们需要修改系统的 Cron 计划任务配置信息，运行以下命令:
+```
+export EDITOR=vi && crontab -e
+```
+复制下面这一行：
+```
+* * * * * php /home/vagrant/Code/larabbs/artisan schedule:run >> /dev/null 2>&1
+```
