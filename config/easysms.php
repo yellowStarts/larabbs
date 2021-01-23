@@ -24,12 +24,18 @@ return [
             'sdk_app_id' => env('SMS_TENCENT_SDK_APP_ID'), // SDK APP ID
             'app_key' => env('SMS_TENCENT_APP_KEY'), // APP KEY
             'sign_name' => env('SMS_TENCENT_SIGN_NAME'), // 短信签名，如果使用默认签名，该字段可缺省（对应官方文档中的sign）
+            'templates' => [
+                'register' => env('SMS_TENCENT_TEMPLATE_REGISTER'), // 注册模板ID
+            ],
         ],
 
         'aliyun' => [
             'access_key_id' => env('SMS_ALIYUN_ACCESS_KEY_ID'),
             'access_key_secret' => env('SMS_ALIYUN_ACCESS_KEY_SECRET'),
-            'sign_name' => env('APP_NAME'),
+            'sign_name' => env('SMS_ALIYUN_SIGN_NAME'),
+            'templates' => [
+                'register' => env('SMS_ALIYUN_TEMPLATE_REGISTER'),
+            ]
         ],
     ],
 ];

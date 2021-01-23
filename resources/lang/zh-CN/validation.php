@@ -129,6 +129,8 @@ return [
     |
     */
 
+    'phone'  => ':attribute 格式不正确。',
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
