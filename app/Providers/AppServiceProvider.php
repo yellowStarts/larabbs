@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,5 +32,8 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Link::observe(\App\Observers\LinkObserver::class);
 
         \Illuminate\Pagination\Paginator::useBootstrap();
+
+        // 去掉接口 数据嵌套 data 层
+        JsonResource::withoutWrapping();
     }
 }
