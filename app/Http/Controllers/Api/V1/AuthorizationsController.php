@@ -74,7 +74,7 @@ class AuthorizationsController extends Controller
                 break;
         }
 
-        return $this->respondWithToken($token)->setStatusCode(201);
+        return $this->respondWithToken($request->access_token)->setStatusCode(201);
     }
 
     public function update()
