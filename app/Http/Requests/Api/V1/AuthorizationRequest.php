@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Api\V1;
 
-class CaptchaRequest extends FormRequest
+class AuthorizationRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -12,7 +12,8 @@ class CaptchaRequest extends FormRequest
     public function rules()
     {
         return [
-            'phone' => 'required|phone:CN,mobile|unique:users',
+            'username' => 'required|string',
+            'password' => 'required|alpha_dash|min:6',
         ];
     }
 }
