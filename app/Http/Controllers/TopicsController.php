@@ -21,20 +21,6 @@ class TopicsController extends Controller
 
 	public function index(Request $request, Topic $topic, User $user, Link $link)
 	{
-        $sms = app('easysms');
-        try {
-            $sms->send(15711500967, [
-                'template' => 852847,
-                'content' => "您的验证码：{1}，该验证码5分钟内有效，请勿泄露于他人！",
-                'data' => [
-                    1234,
-                ],
-            ]);
-        } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {
-            $message = $exception->getException('qcloud')->getMessage();
-            dd($message);
-        }
-
         $topics = $topic->withOrder($request->order)
                         ->with('user', 'category') // 预加载防止 N+1 问题
                         ->paginate(20);
