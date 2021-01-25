@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\TopicRequest;
 use App\Http\Resources\Api\V1\TopicResource;
 use App\Models\Topic;
@@ -16,6 +15,14 @@ class TopicsController extends Controller
         $topic->user_id = $request->user()->id;
         $topic->save();
 
+        return new TopicResource($topic);
+    }
+
+    public function update(TopicRequest $request, Topic $topic)
+    {
+        $this->authorize('update', $topic);
+
+        $topic->update($request->all());
         return new TopicResource($topic);
     }
 }
