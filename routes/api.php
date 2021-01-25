@@ -59,6 +59,13 @@ Route::prefix('v1')
         // 话题列表，详情
         Route::resource('topics', 'TopicsController')->only(['index', 'show']);
 
+        // 话题的回复列表
+        Route::get('topics/{topic}/replies', 'RepliesController@index')->name('topics.replies.index');
+
+        // 用户的回复列表
+        Route::get('users/{user}/replies', 'RepliesController@userIndex')->name('users.replies.index');
+
+
         // 登录后可以访问的接口
         Route::middleware('auth:api')->group(function() {
             // 当前登录用户信息
