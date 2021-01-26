@@ -41,6 +41,9 @@ Route::prefix('v1')
         // 小程序登录
         Route::post('wxapp/authorizations', 'AuthorizationsController@wxappStore')->name('wxapp.authorizations.store');
 
+        // 小程序注册
+        Route::post('wxapp/users', 'UsersController@wxappStore')->name('wxapp.users.store');
+
         // 刷新 token
         Route::put('authorizations/current', 'AuthorizationsController@update')->name('authorizations.update');
 
