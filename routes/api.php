@@ -85,7 +85,9 @@ Route::prefix('v1')
             Route::get('user', 'UsersController@me')->name('user.show');
 
             // 编辑登录用户信息
-            Route::patch('user', 'UsersController@update')->name('user.update');
+            Route::patch('user', 'UsersController@update')->name('user.patch');
+            // 编辑登录用户信息 -- 适配小程序
+            Route::put('user', 'UsersController@update')->name('user.update');
 
             // 上传图片
             Route::post('images', 'ImagesController@store')->name('images.store');

@@ -69,7 +69,7 @@ class UsersController extends Controller
         return UserResource::collection($user->getActiveUsers());
     }
 
-    public function weappStore(UserRequest $request)
+    public function wxappStore(UserRequest $request)
     {
         // 缓存中是否存在对应的 key
         $verifyData = \Cache::get($request->verification_key);
@@ -92,7 +92,7 @@ class UsersController extends Controller
         }
 
         // 如果 openid 对应的用户已存在，报错403
-        $user = User::where('weapp_openid', $data['openid'])->first();
+        $user = User::where('wxapp_openid', $data['openid'])->first();
 
         if ($user) {
             throw new AuthenticationException('微信已绑定其他用户，请直接登录');
@@ -103,7 +103,7 @@ class UsersController extends Controller
             'name' => $request->name,
             'phone' => $verifyData['phone'],
             'password' => $request->password,
-            'weapp_openid' => $data['openid'],
+            'wxapp_openid' => $data['openid'],
             'weixin_session_key' => $data['session_key'],
         ]);
 
