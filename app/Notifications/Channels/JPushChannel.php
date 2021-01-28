@@ -2,6 +2,7 @@
 
 namespace App\Notifications\Channels;
 
+use Illuminate\Notifications\Notification;
 use JPush\Client;
 
 class JPushChannel
